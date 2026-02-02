@@ -1,148 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>BMI Calculator</title>
-    <style>
-        /* Basic Reset & Body Styling */
-        body {
-            font-family: 'Poppins', Arial, sans-serif;
-            background: linear-gradient(to right, #dde3e4, #59bcd4);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+<meta charset="UTF-8">
+<title>BMI Calculator</title>
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f4f7;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 0;
+}
 
-        /* Container Styling */
-        .bmi-container {
-            background: #ffffff;
-            padding: 30px 25px;
-            width: 360px;
-            border-radius: 15px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 400px;
+}
 
-        .bmi-container:hover {
-            transform: translateY(-5px);
-        }
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
 
-        h2 {
-            margin-bottom: 25px;
-            color: #333;
-            font-size: 28px;
-            letter-spacing: 1px;
-        }
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
 
-        /* Input Styling */
-        input {
-            width: 100%;
-            padding: 12px;
-            margin: 12px 0;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #2193b0;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
 
-        input:focus {
-            border-color: #2193b0;
-            box-shadow: 0 0 8px rgba(33,147,176,0.3);
-            outline: none;
-        }
+button:hover {
+    background: #6dd5ed;
+}
 
-        /* Button Styling */
-        button {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(to right, #6dd5ed, #2193b0);
-            color: white;
-            font-size: 18px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-        }
+.result {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
 
-        button:hover {
-            background: linear-gradient(to right, #2193b0, #6dd5ed);
-            transform: scale(1.05);
-        }
+.category {
+    font-weight: bold;
+}
 
-        /* Result Styling */
-        .result {
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: 500;
-        }
+.underweight { color: #f39c12; }
+.normal { color: #27ae60; }
+.overweight { color: #e67e22; }
+.obese { color: #e74c3c; }
 
-        .underweight {
-            color: #f39c12;
-        }
+.tab {
+    display: flex;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
 
-        .normal {
-            color: #27ae60;
-        }
+.tab div {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    background: #e0e0e0;
+    margin-right: 2px;
+    border-radius: 6px 6px 0 0;
+}
 
-        .overweight {
-            color: #e67e22;
-        }
+.tab div.active {
+    background: #2193b0;
+    color: white;
+}
 
-        .obese {
-            color: #e74c3c;
-        }
-    </style>
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+</style>
 </head>
 <body>
 
-<div class="bmi-container">
+<div class="container">
     <h2>BMI Calculator</h2>
 
-    <input type="number" id="weight" placeholder="Weight (kg)">
-    <input type="number" id="height" placeholder="Height (meter)">
+    <div class="tab">
+        <div class="active" onclick="showTab('metric')">Metric Units</div>
+        <div onclick="showTab('us')">US Units</div>
+    </div>
 
-    <button onclick="calculateBMI()">Calculate BMI</button>
+    <div id="metric" class="tab-content active">
+        <input type="number" id="ageMetric" placeholder="Age (2-120)">
+        <select id="genderMetric">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <input type="number" id="heightM" placeholder="Height (meters)">
+        <input type="number" id="weightM" placeholder="Weight (kg)">
+        <button onclick="calculateMetricBMI()">Calculate BMI</button>
+    </div>
+
+    <div id="us" class="tab-content">
+        <input type="number" id="ageUS" placeholder="Age (2-120)">
+        <select id="genderUS">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <input type="number" id="heightFt" placeholder="Height (feet)">
+        <input type="number" id="heightIn" placeholder="Height (inches)">
+        <input type="number" id="weightLbs" placeholder="Weight (lbs)">
+        <button onclick="calculateUSBMI()">Calculate BMI</button>
+    </div>
 
     <div class="result" id="result"></div>
 </div>
 
 <script>
-    function calculateBMI() {
-        let weight = parseFloat(document.getElementById("weight").value);
-        let height = parseFloat(document.getElementById("height").value);
+function showTab(tab) {
+    document.querySelectorAll('.tab div').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.getElementById(tab).classList.add('active');
+    event.target.classList.add('active');
+}
 
-        if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
-            document.getElementById("result").innerHTML = "Please enter valid weight and height!";
-            document.getElementById("result").className = "result";
-            return;
-        }
+function calculateMetricBMI() {
+    let age = parseInt(document.getElementById('ageMetric').value);
+    let height = parseFloat(document.getElementById('heightM').value);
+    let weight = parseFloat(document.getElementById('weightM').value);
 
-        let bmi = weight / (height * height);
-        let category = "";
-        let className = "";
+    if (!age || !height || !weight) return alert("Enter all values!");
 
-        if (bmi < 18.5) {
-            category = "Underweight";
-            className = "underweight";
-        } else if (bmi >= 18.5 && bmi <= 24.9) {
-            category = "Normal";
-            className = "normal";
-        } else if (bmi >= 25 && bmi <= 29.9) {
-            category = "Overweight";
-            className = "overweight";
-        } else {
-            category = "Obese";
-            className = "obese";
-        }
+    let bmi = weight / (height * height);
+    showResult(bmi);
+}
 
-        document.getElementById("result").innerHTML = 
-            `Your BMI: <b>${bmi.toFixed(2)}</b><br>Health Category: <b>${category}</b>`;
-        document.getElementById("result").className = `result ${className}`;
-    }
+function calculateUSBMI() {
+    let age = parseInt(document.getElementById('ageUS').value);
+    let heightFt = parseFloat(document.getElementById('heightFt').value);
+    let heightIn = parseFloat(document.getElementById('heightIn').value);
+    let weight = parseFloat(document.getElementById('weightLbs').value);
+
+    if (!age || !heightFt || heightIn === null || !weight) return alert("Enter all values!");
+
+    let heightTotalIn = (heightFt * 12) + heightIn;
+    let bmi = (703 * weight) / (heightTotalIn * heightTotalIn);
+    showResult(bmi);
+}
+
+function showResult(bmi) {
+    let category = '';
+    let className = '';
+
+    if (bmi < 18.5) { category = 'Underweight'; className='underweight'; }
+    else if (bmi < 25) { category = 'Normal'; className='normal'; }
+    else if (bmi < 30) { category = 'Overweight'; className='overweight'; }
+    else { category = 'Obese'; className='obese'; }
+
+    document.getElementById('result').innerHTML = 
+        `BMI = <b>${bmi.toFixed(2)}</b> (<span class="${className}">${category}</span>)`;
+}
 </script>
 
 </body>
