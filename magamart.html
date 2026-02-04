@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MegaMart E-commerce</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* For slider animation */
+    .slider::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <h1 class="text-2xl font-bold text-blue-600">MegaMart</h1>
+      <nav class="space-x-4">
+        <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="#" class="text-gray-700 hover:text-blue-600">Products</a>
+        <a href="#" class="text-gray-700 hover:text-blue-600">Categories</a>
+        <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <input type="text" placeholder="Search products..." class="px-3 py-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+        <button class="bg-blue-600 text-white px-4 py-1 rounded-md hover:bg-blue-700">Search</button>
+        <button class="text-gray-700 hover:text-blue-600">Cart</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-blue-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Best Deal Online on Smart Watches</h2>
+      <p class="text-lg sm:text-xl mb-6">SMART WEARABLE. UP TO 80% OFF</p>
+      <button class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100">Shop Now</button>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-6">Grab the best deal on Smartphones</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        <!-- Example product card -->
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/150" alt="Product" class="mb-2">
+          <h4 class="font-semibold">Samsung Galaxy S23</h4>
+          <p class="text-green-600 font-bold">Save 10%</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/150" alt="Product" class="mb-2">
+          <h4 class="font-semibold">iPhone 15 Pro</h4>
+          <p class="text-green-600 font-bold">Save 12%</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/150" alt="Product" class="mb-2">
+          <h4 class="font-semibold">Realme GT 3</h4>
+          <p class="text-green-600 font-bold">Save 15%</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/150" alt="Product" class="mb-2">
+          <h4 class="font-semibold">Xiaomi 13 Ultra</h4>
+          <p class="text-green-600 font-bold">Save 20%</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/150" alt="Product" class="mb-2">
+          <h4 class="font-semibold">OnePlus 12</h4>
+          <p class="text-green-600 font-bold">Save 10%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="py-12 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-6">Shop From Top Categories</h3>
+      <div class="grid grid-cols-3 sm:grid-cols-6 gap-4">
+        <div class="text-center p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/60" alt="Mobiles" class="mx-auto mb-2">
+          <p>Mobiles</p>
+        </div>
+        <div class="text-center p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/60" alt="Electronics" class="mx-auto mb-2">
+          <p>Electronics</p>
+        </div>
+        <div class="text-center p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/60" alt="Furniture" class="mx-auto mb-2">
+          <p>Furniture</p>
+        </div>
+        <div class="text-center p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/60" alt="Appliances" class="mx-auto mb-2">
+          <p>Appliances</p>
+        </div>
+        <div class="text-center p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/60" alt="Fashion" class="mx-auto mb-2">
+          <p>Fashion</p>
+        </div>
+        <div class="text-center p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/60" alt="Beauty" class="mx-auto mb-2">
+          <p>Beauty</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Brands Section -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-6">Top Electronics Brands</h3>
+      <div class="flex space-x-4 overflow-x-auto slider">
+        <div class="flex-shrink-0 w-60 bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/150x80" alt="Apple">
+          <p class="text-green-600 font-bold mt-2">UP TO 80% OFF</p>
+        </div>
+        <div class="flex-shrink-0 w-60 bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/150x80" alt="Realme">
+          <p class="text-green-600 font-bold mt-2">UP TO 80% OFF</p>
+        </div>
+        <div class="flex-shrink-0 w-60 bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/150x80" alt="Xiaomi">
+          <p class="text-green-600 font-bold mt-2">UP TO 80% OFF</p>
+        </div>
+        <div class="flex-shrink-0 w-60 bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/150x80" alt="Samsung">
+          <p class="text-green-600 font-bold mt-2">UP TO 80% OFF</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Daily Essentials -->
+  <section class="py-12 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-6">Daily Essentials</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+          <img src="https://via.placeholder.com/100" alt="Vegetables" class="mx-auto mb-2">
+          <p>Vegetables</p>
+          <p class="text-green-600 font-bold">UP TO 50% OFF</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+          <img src="https://via.placeholder.com/100" alt="Fruits" class="mx-auto mb-2">
+          <p>Fruits</p>
+          <p class="text-green-600 font-bold">UP TO 50% OFF</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+          <img src="https://via.placeholder.com/100" alt="Dairy" class="mx-auto mb-2">
+          <p>Dairy</p>
+          <p class="text-green-600 font-bold">UP TO 50% OFF</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+          <img src="https://via.placeholder.com/100" alt="Snacks" class="mx-auto mb-2">
+          <p>Snacks</p>
+          <p class="text-green-600 font-bold">UP TO 50% OFF</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+          <img src="https://via.placeholder.com/100" alt="Beverages" class="mx-auto mb-2">
+          <p>Beverages</p>
+          <p class="text-green-600 font-bold">UP TO 50% OFF</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+          <img src="https://via.placeholder.com/100" alt="Cherries" class="mx-auto mb-2">
+          <p>Cherries</p>
+          <p class="text-green-600 font-bold">UP TO 50% OFF</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-200 py-12">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div>
+        <h4 class="font-bold text-white mb-2">MegaMart</h4>
+        <p>© 2026 All rights reserved. MegaMart Retail Ltd.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-2">Popular Categories</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:text-white">Mobiles</a></li>
+          <li><a href="#" class="hover:text-white">Electronics</a></li>
+          <li><a href="#" class="hover:text-white">Furniture</a></li>
+          <li><a href="#" class="hover:text-white">Fashion</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-2">Customer Service</h4>
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:text-white">Help Center</a></li>
+          <li><a href="#" class="hover:text-white">Returns</a></li>
+          <li><a href="#" class="hover:text-white">Track Order</a></li>
+          <li><a href="#" class="hover:text-white">FAQs</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for simple slider -->
+  <script>
+    const slider = document.querySelector('.slider');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('cursor-grabbing');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('cursor-grabbing');
+    });
+
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('cursor-grabbing');
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if(!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2; //scroll-fast
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+
+</body>
+</html>
